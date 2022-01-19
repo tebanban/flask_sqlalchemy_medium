@@ -3,6 +3,12 @@ from flask_sqlalchemy import SQLAlchemy
 
 
 app = Flask(__name__)
+db = SQLAlchemy(app)
+
+app.config['SECRET_KEY']='secret'
+app.config['SQLALCHEMY_DATABASE_URI']='sqlite:///app.db'
+
+
 
 @app.route('/')
 @app.route('/home/')
